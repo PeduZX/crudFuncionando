@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar</title>
     <link rel="stylesheet" href="/css/adicionar.css">
-     <link
-      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -20,33 +17,41 @@
                 <li><a href="Adicionar.html">Adicionar</a></li>
             </ul>
             <div id="icons-header">
-            <i class="ri-user-line"></i>
-            <i class="ri-shopping-cart-2-line"></i>
+                <i class="ri-user-line"></i>
+                <i class="ri-shopping-cart-2-line"></i>
             </div>
         </nav>
     </header>
-  <main>
-    <div id="container">
-        <form id="form-info-cars" action="">
-            <img src="/img/lambo.png" alt="bmw m4" style="width: 15vw; height: 7vw;">
-            <label for="">Modelo:</label>
-            <input id="modelo" type="text" placeholder=" Tiguan, Gol, M5" required>
-            <label for="">Marca:</label>
-            <input id="marca" type="text" placeholder=" BMW, Mercedes, Audi" required> 
-            <label for="">Origem fabricante:</label>
-            <input id="origem" type="text" placeholder=" Brasil, Alemanha, Japão" required>
-            <label for="">Tipo da carroceria:</label>
-            <input id="carroceria" type="text" placeholder=" Sedan, Hatch, SUV, Coupé" required>
-            <label for="">Adicione uma imagem do carro:</label>
-           <input type="file" name="arquivo" id="arquivo" accept="image/*" required />
-            <button onclick="cadastrarCarro()" id="btn-cadastro-user" type="submit">cadastrar</button>
-        </form>
-    </div>
-  </main>
 
-   <footer>
-        <p>Desenvolvido por Athos Souza, Henzo bollis, Pedro Farenzena &copy;</p>
+    <main>
+        <div id="container">
+            <form id="form-info-cars" enctype="multipart/form-data" onsubmit="cadastrarCarro(event)">
+                <img src="/img/lambo.png" alt="bmw m4" style="width: 15vw; height: 7vw;">
+                
+                <label for="modelo">Modelo:</label>
+                <input name="modelo" id="modelo" type="text" placeholder="Tiguan, Gol, M5" required>
+                
+                <label for="marca">Marca:</label>
+                <input name="marca" id="marca" type="text" placeholder="BMW, Mercedes, Audi" required> 
+                
+                <label for="origem">Origem fabricante:</label>
+                <input name="origem_fabricante" id="origem" type="text" placeholder="Brasil, Alemanha, Japão" required>
+                
+                <label for="carroceria">Tipo da carroceria:</label>
+                <input name="tipo_carroceria" id="carroceria" type="text" placeholder="Sedan, Hatch, SUV, Coupé" required>
+                
+                <label for="arquivo">Adicione uma imagem do carro:</label>
+                <input type="file" name="arquivo" id="arquivo" accept="image/*" required />
+                
+                <button type="submit" id="btn-cadastro-user">Cadastrar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Athos Souza, Henzo Bollis, Pedro Farenzena &copy;</p>
     </footer>
-        <script src="/js/script-carros.js"></script>
+
+    <script src="/js/script-carros.js"></script>
 </body>
 </html>

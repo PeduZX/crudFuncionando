@@ -64,31 +64,34 @@ app.post('/login', (req, res) => {
 // ========================
 // Rota de Cadastrar Carros
 // ========================
-app.post("/registerCarros", upload.single('arquivo'), (request, response) => {
-  const arquivo = request.file;
+app.post("/registerCarros", upload.single('arquivo'), (req, res) => {
+  const arquivo = req.file;
 
   if (!arquivo) {
-    return response.status(400).json({ success: false, message: "Nenhum arquivo enviado" });
+    return res.status(400).json({ success: false, message: "Nenhum arquivo enviado" });
   }
 
   const params = [
-    request.body.modelo,
-    request.body.marca,
-    request.body.origem_fabricante,
-    request.body.tipo_carroceria,
-    request.body.nome_original,
-    arquivo.body.nome_arquivo
+    req.body.modelo,
+    req.body.marca,
+    req.body.origem_fabricante,
+    req.body.tipo_carroceria,
+    arquivo.originalname, // nome original
+    arquivo.filename      // nome salvo no servidor
   ];
 
-  const query = "INSERT INTO carros(modelo, marca, origem_fabricante, tipo_carroceria, nome_original, nome_arquivo) VALUES(?, ?, ?, ?, ?, ?);";
+  const query = `
+    INSERT INTO carros (modelo, marca, origem_fabricante, tipo_carroceria, nome_original, nome_arquivo)
+    VALUES (?, ?, ?, ?, ?, ?);
+  `;
 
   db.query(query, params, (err, results) => {
     if (err) {
       console.error(err);
-      return response.status(400).json({ success: false, message: "Erro ao salvar no banco", data: err });
+      return res.status(400).json({ success: false, message: "Erro ao salvar no banco", data: err });
     }
 
-    response.status(201).json({ success: true, message: "Carro cadastrado com sucesso!", data: results });
+    res.status(201).json({ success: true, message: "Carro cadastrado com sucesso!", data: results });
   });
 });
 
@@ -125,6 +128,36 @@ app.get("/listarCarros", (request, response) => {
     response.status(200).json({ success: true, message: "Sucesso!", data: results });
   });
 });
+
+// ========================
+// Rota de Editar Carros
+// ========================
+app.put("/editarCarro/:id", (request, response) => {
+    const params = [
+      request.body.modelo,
+      request.body.marca,
+      request.body.origem_fabricante,
+      request.body.tipo_carroceria,
+      request.params.id,
+    ];
+
+    const query = `
+        UPDATE carros SET
+            modelo = ?,
+            marca = ?,
+            origem_fabricante = ?,
+            tipo_carroceria = ?
+        WHERE id = ?
+    `;
+
+    db.query(query, params, (err, results) => {
+        if (err) {
+            return response.status(400).json({ success: false, message: "Erro ao atualizar", data: err });
+        }
+        response.status(200).json({ success: true, message: "Carro atualizado com sucesso", data: results });
+    });
+});
+
 
 
 app.listen(3000, () => {
