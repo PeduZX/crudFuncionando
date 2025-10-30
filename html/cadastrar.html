@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuario</title>
+    <link rel="stylesheet" href="/css/cadastrar.css">
+     <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <img src="/img/Design sem nome (4).png" id="logo" alt="logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="carros.html">Carros</a></li>
+                <li><a href="Adicionar.html">Adicionar</a></li>
+            </ul>
+            <div id="icons-header">
+            <i class="ri-user-line"></i>
+            <i class="ri-shopping-cart-2-line"></i>
+            </div>
+        </nav>
+    </header>
+  <main>
+    <div id="container">
+        <form action="">
+            <label for="">Nome:</label>
+            <input id="nome" type="text" placeholder=" Nome" required>
+            <label for="">Email:</label>
+            <input id="email" type="email" placeholder=" nome@email.com" required>
+            <label for="">Senha:</label>
+            <input id="senha" type="password" placeholder=" Ex.: 1234" required>
+            <button onclick="cadastrar()" id="btn-cadastro-user" type="button">Cadastrar</button>
+            <a id="a-login" href="login.html">Já tem conta?</a>
+            <p id="msg" style="text-align: center; color: black;"></p>
+        </form>
+    </div>
+  </main>
+   <footer>
+        <p>Desenvolvido por Athos Souza, Henzo bollis, Pedro Farenzena &copy;</p>
+    </footer>
+    <script src="/js/script-cadastro.js"></script>
+</body>
+</html>

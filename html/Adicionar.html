@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar</title>
+    <link rel="stylesheet" href="/css/adicionar.css">
+     <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <img src="/img/Design sem nome (4).png" id="logo" alt="logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="carros.html">Carros</a></li>
+                <li><a href="Adicionar.html">Adicionar</a></li>
+            </ul>
+            <div id="icons-header">
+            <i class="ri-user-line"></i>
+            <i class="ri-shopping-cart-2-line"></i>
+            </div>
+        </nav>
+    </header>
+  <main>
+    <div id="container">
+        <form id="form-info-cars" action="">
+            <img src="/img/lambo.png" alt="bmw m4" style="width: 15vw; height: 7vw;">
+            <label for="">Modelo:</label>
+            <input id="modelo" type="text" placeholder=" Tiguan, Gol, M5" required>
+            <label for="">Marca:</label>
+            <input id="marca" type="text" placeholder=" BMW, Mercedes, Audi" required> 
+            <label for="">Origem fabricante:</label>
+            <input id="origem" type="text" placeholder=" Brasil, Alemanha, Japão" required>
+            <label for="">Tipo da carroceria:</label>
+            <input id="carroceria" type="text" placeholder=" Sedan, Hatch, SUV, Coupé" required>
+            <label for="">Adicione uma imagem do carro:</label>
+           <input type="file" name="arquivo" id="arquivo" accept="image/*" required />
+            <button onclick="cadastrarCarro()" id="btn-cadastro-user" type="submit">cadastrar</button>
+        </form>
+    </div>
+  </main>
+
+   <footer>
+        <p>Desenvolvido por Athos Souza, Henzo bollis, Pedro Farenzena &copy;</p>
+    </footer>
+        <script src="/js/script-carros.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Story+Script&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-image: url("/img/ChatGPT Image 23 de out. de 2025, 15_53_13.png");
+  background-size: cover;
+  background-repeat: no-repeat; 
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+
+header {
+  display: flex;
+  justify-content: center;
+
+}
+
+#icons-header {
+display: flex;
+justify-content: end;
+gap: 40px;
+}
+
+i{
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80vw;
+  background-color: honeydew;
+  margin-top: 2vw;
+  border-radius: 15px;
+  z-index: 20;
+  box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.nav-bar a {
+  text-decoration: none;
+  color: black;
+}
+.nav-bar a:hover {
+  border-bottom: 3px solid black;
+  transition: 0.1s;
+}
+
+#logo {
+  width: 10vw;
+  height: auto;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+li {
+  list-style: none;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: honeydew;
+    padding: 10vw;
+    border-radius: 15px;
+    gap: 20px;
+    box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    
+}
+
+label{
+  align-self: self-start;   
+}
+
+input{
+    width: 25vw;
+    height: 6vh;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: ease-in-out 0.3s;
+}
+input:focus{
+    transform: scale(1.1);
+    outline: none;
+}
+#btn-cadastro-user{
+  width: 15vw;
+  height: 5vh;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: ease-in-out 0.3s;
+}
+
+#btn-cadastro-user:hover{
+  background-color: rgb(138, 145, 138);
+  transition: ease-in-out 0.3s;
+}
+
+#a-login{
+  text-decoration: none;
+  color: black;
+  opacity: 0.8;
+    transition: ease-in-out 0.3s;
+
+}
+#a-login:hover{
+  opacity: 1;
+  transition: ease-in-out 0.3s;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  background-color: honeydew;
+  margin-top: 5vh;
+}
+
+
+

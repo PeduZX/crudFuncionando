@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Inicial</title>
+    <link rel="stylesheet" href="/css/carros.css">
+     <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+</head>
+<body>
+
+    <header>
+        <nav class="nav-bar">
+            <img src="/img/Design sem nome (4).png" id="logo" alt="logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="carros.html">Carros</a></li>
+                <li><a href="Adicionar.html">Adicionar</a></li>
+            </ul>
+            <div id="icons-header">
+            <i class="ri-user-line"></i>
+            <i class="ri-shopping-cart-2-line"></i>
+            </div>
+        </nav>
+    </header>
+  <main>
+    <div id="container">
+        <div id="div-cards">
+       <div class="InfoCard">
+            <img class="img-carros-card" src="/img/lambo.png" alt="lambo">
+            <p>Modelo:</p>
+            <p>Marca:</p>
+            <p>Origem fabricante:</p>
+            <p>Tipo da carroceria:</p>
+            <a id="a-editar" href="editar.html">editar</a>
+            <button id="btn-deletar" onclick="deletarCarros(id)" >Deletar</button>
+       </div>
+       <div class="InfoCard">
+            <img class="img-carros-card" src="/img/lambo.png" alt="lambo">
+            <p>Modelo:</p>
+            <p>Marca:</p>
+            <p>Origem fabricante:</p>
+            <p>Tipo da carroceria:</p>
+            <a id="a-editar" href="editar.html">editar</a>
+            <button id="btn-deletar" onclick="deletarCarros(id)" >Deletar</button>
+       </div>
+    </div>
+   
+</div>
+    </div>
+  </main>
+
+  <script src="/js/script-carros.js"></script>
+</body>
+</html>
