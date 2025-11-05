@@ -13,7 +13,7 @@ formEditar.addEventListener("submit", async (e) => {
   formData.append("origem_fabricante", document.getElementById("origem_fabricante").value);
   formData.append("tipo_carroceria", document.getElementById("tipo_carroceria").value);
 
-  const arquivo = document.getElementById("input-editar-img").files[0]; // ✅ corrigido aqui
+  const arquivo = document.getElementById("input-editar-img").files[0]; 
   if (arquivo) {
     formData.append("arquivo", arquivo);
   }
@@ -37,3 +37,4 @@ formEditar.addEventListener("submit", async (e) => {
     alert("Ocorreu um erro ao atualizar o carro.");
   }
 });
+
