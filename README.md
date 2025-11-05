@@ -7,3 +7,5 @@ CREATE TABLE carros( id INT PRIMARY KEY AUTO_INCREMENT, modelo VARCHAR(255), mar
 SELECT * FROM users;
 
 SELECT * FROM carros;
+
+## https://www.figma.com/design/n71ZXYlE5nxkVvdJ5JUFS1/Sem-título?node-id=0-1&p=f&t=YHpqvQndJz3fecyZ-0
