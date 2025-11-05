@@ -132,31 +132,46 @@ app.get("/listarCarros", (request, response) => {
 // ========================
 // Rota de Editar Carros
 // ========================
-app.put("/editarCarro/:id", (request, response) => {
-    const params = [
-      request.body.modelo,
-      request.body.marca,
-      request.body.origem_fabricante,
-      request.body.tipo_carroceria,
-      request.params.id,
-    ];
+app.put("/editarCarro/:id", upload.single('arquivo'), (req, res) => {
+  const { modelo, marca, origem_fabricante, tipo_carroceria } = req.body;
+  const arquivo = req.file; // imagem obrigatória
+  const id = req.params.id;
 
-    const query = `
-        UPDATE carros SET
-            modelo = ?,
-            marca = ?,
-            origem_fabricante = ?,
-            tipo_carroceria = ?
-        WHERE id = ?
-    `;
+  if (!arquivo) {
+    return res.status(400).json({ success: false, message: "Nenhum arquivo enviado." });
+  }
 
-    db.query(query, params, (err, results) => {
-        if (err) {
-            return response.status(400).json({ success: false, message: "Erro ao atualizar", data: err });
-        }
-        response.status(200).json({ success: true, message: "Carro atualizado com sucesso", data: results });
-    });
+  const query = `
+    UPDATE carros SET
+      modelo = ?,
+      marca = ?,
+      origem_fabricante = ?,
+      tipo_carroceria = ?,
+      nome_original = ?,
+      nome_arquivo = ?
+      WHERE id = ?;
+  `;
+
+  const params = [
+    req.body.modelo,
+    req.body.marca,
+    req.body.origem_fabricante,
+    req.body.tipo_carroceria,
+    arquivo.originalname, // nome original
+    arquivo.filename,      // nome salvo no servidor
+    id
+  ];
+
+  db.query(query, params, (err, results) => {
+    if (err) {
+      console.error("Erro ao atualizar carro:", err);
+      return res.status(400).json({ success: false, message: "Erro ao atualizar", data: err });
+    }
+
+    res.status(200).json({ success: true, message: "Carro atualizado com sucesso!", data: results });
+  });
 });
+
 
 
 

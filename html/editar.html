@@ -25,7 +25,7 @@
 
     <main>
         <div id="container">
-            <form id="formEditar" action="">
+            <form id="formEditar" action="" enctype="multipart/form-data">
                 <h1>Edite seu Carro</h1>
                 <img src="/img/Design sem nome (4).png" alt="bmw m4" style="width: 15vw; height: 9vw;">
 
@@ -42,7 +42,7 @@
                 <input type="text" id="tipo_carroceria" placeholder="Sedan, Hatch, SUV, Coupé">
 
                 <label for="input-file">Adicione uma imagem do carro:</label>
-                <input id="input-file" type="file" style="padding: 12px;">
+                <input id="input-editar-img"  name="arquivo" type="file" style="padding: 12px;">
 
                 <button id="btn-cadastro-user">Editar</button>
             </form>
